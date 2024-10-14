@@ -41,10 +41,6 @@ button {
     cursor: pointer;
 }
 
-#botao-cancelar {
-    background-color: rgb(111, 14, 14);
-}
-
 ul {
     display:list-item;
 }
@@ -52,4 +48,13 @@ ul {
 ul li {
     max-width: 50%;
     list style:none;
+}
+
+.overlay-tarefa-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul li:hover .overlay-tarefa-link {
+    opacity: 1;
 }
