@@ -48,7 +48,7 @@ ul {
 
 ul li {
     max-width: 50%;
-    list style:none;
+    list-style: none;
 }
 
 .overlay-tarefa-link {
