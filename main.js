@@ -1,26 +1,20 @@
-$(document).ready(function(){
-    $('header button').click(function() {
-        $('form').slideDown();
-    })
-
-    $('#botao-cancelar').click(function() {
-        $('form').slideUp();
-    })
-
-    $('form').on('submit',function(e) {
+    $(document).ready(function () {
+        $("header button").click(function () {
+        $("form").slideDown();
+        });
+    
+        $("form").on("submit", function (e) {
         e.preventDefault();
-        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
-        const novoItem = $('<li style="display: none"></li>')
-        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
-        $(`
-            <div class="overlay-imagem-link">
-                <a href="${enderecoDaNovaImagem}" target="_blank" "title="Ver imagem em tamanho real">
-                    Ver imagem em tamanho real
-                </a>
-            </div>
-            `).appendTo(novoItem);
-            $(novoItem).appendTo('ul');
-            $(novoItem).fadeIn();
-            $('#endereco-imagem-nova').val('')
-    })
-})
+        const novaTarefa = $("#tarefa").val();
+
+        const novoItem = $(`<li style="display: none">${novaTarefa}</li>`);
+        $("ul").append(novoItem);
+        novoItem.slideDown();
+    
+        $("#tarefa").val("");
+        });
+
+        $("ul").on("click", "li", function() {
+            $(this).toggleClass("concluído");
+        });
+    });
